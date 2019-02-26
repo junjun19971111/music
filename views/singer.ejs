@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/stylesheets/singer.css">
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+    <script  src="/javascripts/jquery.min.js"></script>
+    <script type="text/javascript" src="/javascripts/singer.js"></script>
+    <script type="text/javascript" src="/javascripts/index.js"></script>
+    <script type="text/javascript" src="/layui/layui.all.js"></script>
+    <script type="text/javascript" src = "/javascripts/email.js"></script>
+    <title>歌手界面</title>
+  </head>
+  <body>
+    <div class="mod_head">
+      <div class="section_inner">
+        <h1 class="mod_tittle">在线音乐</h1>
+        <ul class="section_nav">
+          <li><a class="active" href="javascript:void(0)" onclick="returnIndex()">音乐馆</a></li>
+          <li><a href="http://localhost:8081/play">我的音乐</a></li>
+          <li><a href="javascript:void(0)">vip</a></li>
+          <li><a href="javascript:void(0)">音乐号</a></li>
+          <li><a href="javascript:void(0)">客户端</a></li>
+        </ul>
+        <div id="box">
+          <input type="text" name="search" placeholder="音乐/作者/专辑">
+          <div id="search">搜索</div>
+        </div>
+        <div class="self_info">
+          <img id="test" src="/images/1.jpg" alt="未登录">
+        </div>
+        <div class="sign_in">
+            <div  onclick="showMyLike()"style="color:white;" id="name"> </div>
+        </div>
+        <div class="head_nav">
+          <div class="nav_inner">
+            <ul class="nav_title">
+                <li><a  href="#self_introduce">推荐</a></li>
+                <li><a href="#list_sort">排行榜</a></li>
+                <li><a href="#">歌单</a></li>
+                <li><a  class="active" href="javascript:void(0)" click="getSingerIndex();">歌手</a></li>
+                <li><a  href="#new_music">新上架</a></li>
+
+
+            </ul>
+
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+    <div class="mod_singer">
+        <div id="singer_most" class="singer_list">
+              <div class="head_nav_list">
+                  <ul id="palce" class="show_nav">
+
+                      <li class="active"><a href="javascript:void(0)">全部</a></li>
+                      <li><a href="javascript:void(0)">大陆</a></li>
+                      <li><a href="javascript:void(0)">韩国</a></li>
+                      <li><a href="javascript:void(0)">港台</a></li>
+                      <li><a href="javascript:void(0)">欧美</a></li>
+                      <li><a href="javascript:void(0)">日本</a></li>
+                  </ul>
+                  <ul id="sex" class="show_nav">
+                      <li class="active"><a href="javascript:void(0)">全部</a></li>
+                      <li><a href="javascript:void(0)">男</a></li>
+                      <li><a href="javascript:void(0)">女</a></li>
+                      <li><a href="javascript:void(0)">组合</a></li>
+                  </ul>
+                  <ul id="type" class="show_nav">
+                      <li class="active"><a href="javascript:void(0)">全部</a></li>
+                      <li><a href="javascript:void(0)">流行</a></li>
+                      <li><a href="javascript:void(0)">嘻哈</a></li>
+                      <li><a href="javascript:void(0)">摇滚</a></li>
+                      <li><a href="javascript:void(0)">电子</a></li>
+                      <li><a href="javascript:void(0)">民谣</a></li>
+                  </ul>
+
+              </div>
+              <div class="hr">
+                  <hr class="my_style">
+              </div>
+              <div id="singer_list" class="singer">
+
+              </div>
+              <div class="page_btn">
+                <ul id="page">
+
+                </ul>
+
+              </div>
+
+
+
+        </div>
+
+        <div  id="singer_more" class="singer_more">
+            <div class="singer_main">
+                  <div class="this_img">
+                      <img src="" alt="">
+                  </div>
+                  <div class="this_info">
+                          <div class="this_name">
+
+                          </div>
+                          <div class="this_sex">
+
+                          </div>
+                          <div class="this_type">
+
+                          </div>
+                          <div class="this_introduce">
+
+                          </div>
+                  </div>
+            </div>
+            <hr >
+            <div class="singer_music">
+                <ul class="ok">
+                  <li>歌名</li>
+                  <li>专辑</li>
+                  <li>热度</li>
+                  <li>播放</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="mod_foot">
+      <a href="info.html">@鲜芋仙工作室</a>
+
+    </div>
+
+  </body>
+</html>

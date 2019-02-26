@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>在线播放器</title>
+    <link rel="stylesheet" href="/stylesheets/play.css">
+
+    <script type="text/javascript" src="/layui/layui.all.js"></script>
+    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+    <script  src="/javascripts/jquery.min.js"></script>
+  </head>
+
+  <body>
+        <div class="mod_nav">
+        <div class="info">
+              <img src="/images/1.jpg" alt="">
+        </div>
+
+
+    </div>
+    <div class="mod_play">
+        <div class="mod_list">
+              <div class="left">
+                  <div class="music_list">
+                    <ul class="button_list">
+                      <li><a class="addLike"><i class="fa fa-heart-o fa-lg" ></i>&nbsp;喜欢</a></li>
+                      <li><a href="#"><i class="fa fa-plus-square-o fa-lg" aria-hidden="true"></i>&nbsp;添加</a></li>
+                      <li><a href="#"><i class="fa fa-commenting-o fa-lg" aria-hidden="true"></i>&nbsp;评论</a></li>
+                      <li><a href="#"><i class="fa fa-download fa-lg" aria-hidden="true"></i>&nbsp;下载</a></li>
+                    </ul>
+                    <ul class="name_list">
+                      <hr class="style-one"></hr>
+                      <li>
+                        <a >歌名</a>
+                        <a href="#">专辑名</a>
+                        <a href="#">歌手</a>
+                      </li>
+                      <hr class="style-one"></hr>
+
+                    </ul>
+                  </div>
+                  <div class="lyric">
+                    <ul id="lyric">
+            
+                    </ul>
+
+                  </div>
+              </div>
+              <div class="right">
+                <img   id="play_image"  alt="">
+
+              </div>
+        </div>
+    </div>
+    <div class="foot">
+      <div class="play_foot">
+        <audio id="music_audio" class="player" controls preload="auto">
+            <source title="/media/RISE.mp3" id="music_path" src="/media/hyukoh,Kim - Isn't She Lovely (cover).mp3" type="audio/mpeg">
+            <source src="horse.ogg" type="audio/ogg">
+        </audio>
+      </div>
+      <div class="nav_play">
+          <ul>
+              <li><a  class ="addLike"><i class="fa fa-heart-o fa-lg" ></i></a></li>
+              <li><a href="#"><i class="fa fa-download fa-lg" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-commenting-o fa-lg" aria-hidden="true"></i></a></li>
+
+          </ul>
+      </div>
+
+
+    </div>
+
+  </body>
+  <script type="text/javascript" src="/javascripts/play.js"></script>
+</html>

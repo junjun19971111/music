@@ -1,0 +1,20 @@
+用户类 name: 昵称
+       accout:1121968314
+       password:19971012junjun
+       like:[""]            user
+
+歌曲类 	"name":,
+     	"author":,
+     	"palce":,
+   	"hot":,
+     	"comment":[{accout: ,}]
+        "url":,
+        'z_name":,
+	"introduce",
+	"img-url",               list
+
+歌手类 name
+       palce
+       type
+       introduce
+{"name":"俊俊","account":1121968314,"password":"19971012junjun","like":["RISE","彩虹","告白气球"]} author 

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/stylesheets/index.css">
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+    <script  src="/javascripts/jquery.min.js"></script>
+    <script type="text/javascript" src="/javascripts/index_ingo.js"></script>
+    <script type="text/javascript" src="/javascripts/index.js"></script>
+    <script type="text/javascript" src="/layui/layui.all.js"></script>
+    <script type="text/javascript" src = "/javascripts/email.js"></script>
+
+    <title>在线音乐平台</title>
+  </head>
+  <body>
+  <div class="mod_head">
+    <div class="section_inner">
+      <h1 class="mod_tittle"><img src="/images/3.png" alt="">在线音乐</h1>
+      <ul class="section_nav">
+        <li><a class="active" href="javascript:void(0)" onclick="back();">音乐馆</a></li>
+        <li><a href="http://localhost:8081/play">我的音乐</a></li>
+        <li><a href="javascript:void(0)">vip</a></li>
+        <li><a href="javascript:void(0)">音乐号</a></li>
+        <li><a href="javascript:void(0)">客户端</a></li>
+      </ul>
+      <div id="box">
+        <input type="text" name="search" placeholder="音乐/作者/专辑">
+        <div id="search">搜索</div>
+      </div>
+      <div class="self_info">
+        <img id="test" src="/images/1.jpg" alt="未登录">
+      </div>
+      <div class="sign_in">
+          <div  onclick="showMyLike()"style="color:white;" id="name"> </div>
+      </div>
+      <div onclick="bace_first()"class="back">
+          <i class="fa fa-sign-out" aria-hidden="true"></i>
+      </div>
+      <div class="head_nav">
+        <div class="nav_inner">
+          <ul class="nav_title">
+              <li><a class="active" href="#self_introduce">推荐</a></li>
+              <li><a href="#list_sort">排行榜</a></li>
+              <li><a href="#">歌单</a></li>
+              <li><a href="javascript:void(0)" onclick="getSingerIndex();">歌手</a></li>
+              <li><a href="#new_music">新上架</a></li>
+
+
+          </ul>
+
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+  <div id="music_main" class="mod_main">
+    <div class="mod_index">
+      <div class="mod_section">
+        <div id="self_introduce" class="section_name">
+            <h2>个性推荐</h2>
+        </div>
+        <div class="section_sort">
+            <ul>
+              <li><div id="change_0" onclick="change(0)"class="active" >为你推荐</div></li>
+              <li><div id="change_1" onclick="change(5)">安静</div></li>
+              <li><div id="change_2" onclick="change(10)">伤感</div></li>
+              <li><div id="change_3"  onclick="change(15)">学习</div></li>
+              <li><div id="change_4" onclick="change(20)">工作</div></li>
+
+            </ul>
+        </div>
+        <div class="section_content">
+            <div class="section_main">
+                <div id="list_0" class="section_hot">
+                  <div class="hot_cover">
+
+                      <div  class="play_btn"><i class="fa fa-play-circle fa-5x" aria-hidden="true"></i></div>
+                      <img  alt="">
+                  </div>
+                  <div class="play_name">
+                    <div class="name"></div>
+                    <div class="descri"></div>
+                  </div>
+                </div>
+                <div  id="list_1" class="section_hot">
+                  <div class="hot_cover">
+                    <div  class="play_btn"><i class="fa fa-play-circle fa-5x" aria-hidden="true"></i></div>
+                      <img  alt="">
+                  </div>
+                  <div class="play_name">
+                    <div class="name"></div>
+                    <div class="descri"></div>
+                  </div>
+
+                </div>
+                <div  id="list_2" class="section_hot">
+                  <div class="hot_cover">
+                    <div  class="play_btn"><i class="fa fa-play-circle fa-5x" aria-hidden="true"></i></div>
+                      <img  alt="">
+                  </div>
+                  <div class="play_name">
+                    <div class="name"></div>
+                    <div class="descri"></div>
+                  </div>
+
+                </div>
+                <div  id="list_3" class="section_hot">
+                  <div class="hot_cover">
+                    <div class="play_btn"><i class="fa fa-play-circle fa-5x" aria-hidden="true"></i></div>
+                      <img alt="">
+                  </div>
+                  <div class="play_name">
+                    <div class="name"></div>
+                    <div class="descri"></div>
+                  </div>
+
+                </div>
+                <div  id="list_4" class="section_hot">
+                  <div class="hot_cover">
+                    <div  class="play_btn"><i class="fa fa-play-circle fa-5x" aria-hidden="true"></i></div>
+                      <img  alt="">
+                  </div>
+                  <div class="play_name">
+                    <div class="name"></div>
+                    <div class="descri"></div>
+                  </div>
+
+                </div>
+              </div>
+          </div>
+
+
+      </div>
+    </div>
+    <div class="none" style="width:100%;height:30px;">
+
+    </div>
+    <div class="mod_index">
+      <div id="new_music" class="mod_section">
+        <div class="section_name">
+            <h2>新歌首发</h2>
+        </div>
+        <div class="section_sort">
+            <ul id="palce">
+              <li><div id="place_0"class="active">韩国</div></li>
+              <li><div id="place_1" >大陆</div></li>
+              <li><div id="place_2">欧美</div></li>
+              <li><div id="place_3">港台</div></li>
+              <li><div id="place_4">日本</div></li>
+
+            </ul>
+        </div>
+        <div class="section_content">
+            <div class="section_main">
+                <div id="place_list_0" class="section_hot">
+                  <div class="hot_cover">
+                    <div  class="play_btn"><i class="fa fa-play-circle fa-5x" aria-hidden="true"></i></div>
+                      <img  alt="">
+                  </div>
+                  <div class="play_name">
+                      <div class="name"></div>
+                      <div class="descri"></div>
+                  </div>
+                </div>
+                <div id="place_list_1" class="section_hot">
+                  <div class="hot_cover">
+                    <div  class="play_btn"><i class="fa fa-play-circle fa-5x" aria-hidden="true"></i></div>
+                      <img  alt="">
+                  </div>
+                  <div class="play_name">
+
+                      <div class="name"></div>
+                      <div class="descri"></div>
+                  </div>
+
+                </div>
+                <div id="place_list_2" class="section_hot">
+                  <div class="hot_cover">
+                    <div  class="play_btn"><i class="fa fa-play-circle fa-5x" aria-hidden="true"></i></div>
+                      <img  alt="">
+                  </div>
+                  <div class="play_name">
+                      <div class="name"></div>
+                      <div class="descri"></div>
+                  </div>
+
+                </div>
+                <div id="place_list_3" class="section_hot">
+                  <div class="hot_cover">
+                    <div  class="play_btn"><i class="fa fa-play-circle fa-5x" aria-hidden="true"></i></div>
+                      <img  alt="">
+                  </div>
+                  <div class="play_name">
+                      <div class="name"></div>
+                      <div class="descri"></div>
+                  </div>
+
+                </div>
+                <div id="place_list_4" class="section_hot">
+                  <div class="hot_cover">
+                    <div class="play_btn"><i class="fa fa-play-circle fa-5x" aria-hidden="true"></i></div>
+                      <img  alt="">
+                  </div>
+                  <div class="play_name">
+                      <div class="name"></div>
+                      <div class="descri"></div>
+                  </div>
+
+                </div>
+              </div>
+          </div>
+
+
+      </div>
+    </div>
+    <div class=" none" style="width:100%;height:30px;">
+
+    </div>
+    <div class="mod_index">
+      <div id="list_sort" class="mod_section">
+        <div class="section_name">
+            <h2>排行榜</h2>
+        </div>
+        <div class="play_nav">
+            <div class="play_list">
+                <table id="introd_list_0" class="list_1">
+                    <tr><th>韩国流行</th></tr>
+                    <tr>
+                      <td class="list_dis_0">
+
+                              <a href="#">1.</a>
+
+
+                            <div class="start">
+                                <i class="fa fa-play-circle " aria-hidden="true"></i>
+                            </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="list_dis_1">
+                          <a href="#">2.</a>
+                        <div class="start">
+                            <i class="fa fa-play-circle " aria-hidden="true"></i>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="list_dis_2">
+                          <a href="#">3.</a>
+                        <div class="start">
+                            <i class="fa fa-play-circle " aria-hidden="true"></i>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="list_dis_3">
+                          <a href="#">4.</a>
+                        <div class="start">
+                            <i class="fa fa-play-circle " aria-hidden="true"></i>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="list_dis_4">
+                          <a href="#">5.</a>
+                        <div class="start">
+                            <i class="fa fa-play-circle " aria-hidden="true"></i>
+                        </div>
+                      </td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="play_list">
+                <table id="introd_list_1" class="list_2">
+                  <tr>
+                      <th>大陆流行</th>
+                  </tr>
+                  <tr>
+                    <td class="list_dis_0">
+                          <a href="#">1.</a>
+                          <div class="start">
+                              <i class="fa fa-play-circle " aria-hidden="true"></i>
+                          </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="list_dis_1">
+                        <a href="#">2.</a>
+                      <div class="start">
+                          <i class="fa fa-play-circle " aria-hidden="true"></i>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="list_dis_2">
+                        <a href="#">3.</a>
+                      <div class="start">
+                          <i class="fa fa-play-circle " aria-hidden="true"></i>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="list_dis_3">
+                        <a href="#">4.</a>
+                      <div class="start">
+                          <i class="fa fa-play-circle " aria-hidden="true"></i>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="list_dis_4">
+                        <a href="#">5.</a>
+                      <div class="start">
+                          <i class="fa fa-play-circle " aria-hidden="true"></i>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+            </div>
+            <div class="play_list">
+                <table id="introd_list_2" class="list_3">
+                    <tr>
+                      <th>日本流行</th>
+                    </tr>
+                    <tr>
+                      <td class="list_dis_0">
+                            <a href="#">1.</a>
+                            <div class="start">
+                                <i class="fa fa-play-circle " aria-hidden="true"></i>
+                            </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="list_dis_1">
+                          <a href="#">2.</a>
+                        <div class="start">
+                            <i class="fa fa-play-circle " aria-hidden="true"></i>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="list_dis_2">
+                          <a href="#">3.</a>
+                        <div class="start">
+                            <i class="fa fa-play-circle " aria-hidden="true"></i>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="list_dis_3">
+                          <a href="#">4.</a>
+                        <div class="start">
+                            <i class="fa fa-play-circle " aria-hidden="true"></i>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="list_dis_4">
+                          <a href="#">5.</a>
+                        <div class="start">
+                            <i class="fa fa-play-circle " aria-hidden="true"></i>
+                        </div>
+                      </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="play_list">
+                <table id="introd_list_3" class="list_4">
+                    <tr>
+                      <th>欧美流行</th>
+                    </tr>
+                    <tr>
+                      <td class="list_dis_0">
+                            <a href="#">1.</a>
+                            <div class="start">
+                                <i class="fa fa-play-circle " aria-hidden="true"></i>
+                            </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="list_dis_1">
+                          <a href="#">2.</a>
+                        <div class="start">
+                            <i class="fa fa-play-circle " aria-hidden="true"></i>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="list_dis_2">
+                          <a href="#">3.</a>
+                        <div class="start">
+                            <i class="fa fa-play-circle " aria-hidden="true"></i>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="list_dis_3">
+                          <a href="#">4.</a>
+                        <div class="start">
+                            <i class="fa fa-play-circle " aria-hidden="true"></i>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="list_dis_4">
+                          <a href="#">5.</a>
+                        <div class="start">
+                            <i class="fa fa-play-circle " aria-hidden="true"></i>
+                        </div>
+                      </td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="play_list">
+                <table id="introd_list_4" class="list_5">
+                    <tr>
+                      <th>港台流行</th>
+                    </tr>
+                    <tr>
+                      <td class="list_dis_0">
+                            <a href="#">1.</a>
+                            <div class="start">
+                                <i class="fa fa-play-circle " aria-hidden="true"></i>
+                            </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="list_dis_1">
+                          <a href="#">2.</a>
+                        <div class="start">
+                            <i class="fa fa-play-circle " aria-hidden="true"></i>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="list_dis_2">
+                          <a href="#">3.</a>
+                        <div class="start">
+                            <i class="fa fa-play-circle " aria-hidden="true"></i>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="list_dis_3">
+                          <a href="#">4.</a>
+                        <div class="start">
+                            <i class="fa fa-play-circle " aria-hidden="true"></i>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="list_dis_4">
+                          <a href="#">5.</a>
+                        <div class="start">
+                            <i class="fa fa-play-circle " aria-hidden="true"></i>
+                        </div>
+                      </td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div id="res_result" class="search_res">
+
+      <div class="search_res_music">
+        <hr class="style-one"></hr>
+
+
+
+
+      </div>
+  </div>
+  <div class="my_like" id="like">
+      <div class="like_main">
+          <div class="like_list">
+            <ul >
+              <li class="nav_select selected">喜欢的音乐</li>
+              <li class="nav_select">收藏的歌单</li>
+              <li class="nav_info">程序员敲代码战歌</li>
+              <li class="nav_info">敲代码的动力源泉</li>
+              <li class="nav_info">程序员的爱情故事</li>
+            </ul>
+
+          </div>
+          <div class="music_coo">
+                <div class="user_info">
+                    <div class="img_info">
+                        <img src="/images/1.jpg" alt="">
+                    </div>
+
+                    <div class="user_btn">
+                        <div class="this_main">
+
+                        </div>
+                        <div class="this_main">
+                            我喜欢的音乐
+                        </div>
+                        <div class="this_main">
+                          <div class="play_it">
+                              <i class="fa fa-play-circle-o fa-2x" aria-hidden="true"></i> 播放
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="style-one">
+                <div class="music_info">
+                    <ul id="love_list" class="like_music_list">
+                      <li><div></div><div>歌名</div><div>歌手</div><div>地区</div><div>专辑</div></li>
+                      <hr class="style-two">
+                    </ul>
+                </div>
+          </div>
+
+      </div>
+  </div>
+  <div class="mod_foot">
+    <a href="info.html">@鲜芋仙工作室</a>
+
+  </div>
+
+  </body>
+</html>

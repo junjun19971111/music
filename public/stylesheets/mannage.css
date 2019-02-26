@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
+.head{
+    background-color: #263d61;
+    padding: 40px 0;
+}
+.head .logo{
+    margin-left: 100px;
+}
+.head .logo h2{
+    color: white;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+.input{
+    width: 100%;
+    height: 350px;
+    margin-top: 70px;
+    background: white;
+}
+.input .input_group{
+    width:550px;
+    height: 240px;
+    margin: auto;
+
+}
+.input .input_group .input_mod {
+    width: 550px;
+    height: 45px;
+    margin-top: 10px;
+    position: relative;
+}
+.input .input_group .input_mod input{
+    display: block;
+    width: 100%;
+    height: 45px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.input .input_group .input_mod span{
+      position: absolute;
+      right: 0px;
+      width: 40px;
+      height: 40px;
+      top: 0px;
+      line-height: 40px;
+      color: #777;
+}
+.input .input_group .forget_pas{
+    margin-top:10px;
+    width: 100%;
+    height: 20px;
+    float: left;
+    font-size: 14px;
+    color: #263d61;
+    line-height: 20px;
+    text-align: right;
+}
+.input .input_group .forget_pas:hover{
+    cursor: pointer;
+    color: #777;
+}
+.input .input_group .btn_login{
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    line-height: 45px;
+    font-size: 20px;
+    margin-top: 45px;
+    background: #263d61;
+}
+.input .input_group .btn_login a{
+    display: block;
+    text-decoration: none;
+    color: white;
+
+}
+.input .input_group .btn_login:hover{
+    cursor: pointer;
+    background: #333333;
+}
+.foot{
+    width: 100%;
+    height: 90px;
+    background: #333333;
+    line-height: 90px;
+    text-align: center;
+    color: white;
+}

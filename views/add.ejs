@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>在线管理平台</title>
+    <link rel="stylesheet" href="/stylesheets/add.css">
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+    <script  src="/javascripts/jquery.min.js"></script>
+
+    <script type="text/javascript" src="/javascripts/add.js"></script>
+
+    <script type="text/javascript" src="/layui/layui.all.js"></script>
+    <sc class=""ript type="text/javascript" src="/layui/layui.js"></script><ul>
+
+    </ul>
+
+  </head>
+  <body>
+    <nav>
+          <div id="logo" title="点击刷新">LOGO + 后台管理</div>
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <select id="search-select">
+              <option value="author" selected>作者</option>
+              <option value="music">歌曲</option>
+          </select>
+          <input type="search" id="search" placeholder="搜索关键词">
+          <div id="logout" onclick="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</div>
+    </nav>
+    <div class="main">
+      <div class="info_se">
+          <div class="info">
+            <img src="/images/1.jpg" alt="">
+            <span>Adimin</span>
+          </div>
+          <div class="set_info">
+            <ul>
+                <li class="sel_tip"  ><a href="javascript:void(0)"><i class="fa fa-plus-square fa-lg" aria-hidden="true"></i> 添加内容</a></li>
+                <li class="sel_con" ><a id="addSome" href="javascript:void(0)"><i class="fa fa-diamond" aria-hidden="true"></i> 添加歌曲</a></li>
+                <li class="sel_con" ><a id="addMan" ><i class="fa fa-female" aria-hidden="true"></i> 添加歌手</a></li>
+                <li class="sel_tip" ><a href="#"><i class="fa fa-eyedropper fa-lg" aria-hidden="true"></i> 管理乐库</a></li>
+                <li class="sel_con" ><a id="manage_music"><i class="fa fa-music" aria-hidden="true"></i> 管理歌曲</a></li>
+                <li class="sel_con" ><a id="manage_singer"><i class="fa fa-male" aria-hidden="true"></i> 管理歌手</a></li>
+                <li class="sel_tip" ><a ><i class="fa fa-cog fa-lg" aria-hidden="true"></i>  管理员账户设置</a></li>
+                <li class="sel_con" ><a ><i class="fa fa-user" aria-hidden="true"></i> 管理员账户</a></li>
+            </ul>
+
+          </div>
+
+      </div>
+      <div class="display_con">
+        <div class="display_main">
+          <p id="dis_music"><i class="fa fa-globe" aria-hidden="true"></i>本在线音乐平台一共收录<a id="music_number" href="javascript:void(0)" onclick="manage_music()">__</a>首歌,<a id="singer_number" href="javascript:void(0)">_</a>名歌手</p>
+          <p id="dis_fun"><i class="fa fa-hand-o-left" aria-hidden="true"></i>请从左侧选择功能</p>
+          <div class="what" id="addMusic">
+              <form  class="add_music"  method="post" action="http://localhost:8081/add_music">
+                <div class="input_group">
+                      歌曲：<input id="sumbit_name" class="self" type="text" name="" value="" placeholder="歌曲名字">
+                </div>
+                <div class="input_group">
+                    歌手：<input id="sumbit_author" class="self" type="text" name="" value="" placeholder="歌手名字">
+                </div>
+                <div class="input_group">
+                    专辑：<input id="sumbit_z_name" class="self" type="text" name="" value="" placeholder="专辑名字">
+                </div>
+                <div class="input_group">
+                      url：<input id="sumbit_url" class="self" type="text" name="" value="" placeholder="url">
+                </div>
+                <div id="sumbit_palce" class="input_group" style="cursor:pointer;">
+                    地区：
+                    <input type="radio" name="palce" value="大陆" title="大陆" checked>
+                    大陆
+                    <input type="radio" name="palce" value="港台" title="港台" >
+                    港台
+                    <input type="radio" name="palce" value="日本" title="日本" >
+                    日本
+                    <input type="radio" name="palce" value="欧美" title="欧美" >
+                    欧美
+                    <input type="radio" name="palce" value="韩国" title="韩国" >
+                    韩国
+                </div>
+                <div class="input_group">
+                    类型：现代流行<input type="checkbox" name="" title="安静" checked>
+                    悲伤
+                         <input type="checkbox" name="" title="伤感">
+                    欢快<input type="checkbox" name="" title="伤感">
+                    古风<input type="checkbox" name="" title="伤感">
+                </div>
+                <div class="text_group">
+                    简介：<input id="sumbit_introduce" class="text" type="text" name="" value="" placeholder="歌曲介绍">
+                </div>
+                <div id="add_btn" class="sumbit_btn" onclick="addMusic()">
+                  提交
+                </div>
+
+              </form>
+
+            </div>
+            <div class="what" id="addAuthor">
+              <form  class="add_music"  method="post">
+
+                <div class="input_group">
+                    歌手：<input class="self" type="text" name="" value="" placeholder="歌手名字">
+                </div>
+
+                <div class="input_group" style="cursor:pointer;">
+                    地区：大陆
+                    <input type="radio" name="palce" value="da" title="大陆" checked>
+                    港台
+                    <input type="radio" name="palce" value="ga" title="港台" >
+                    日本
+                    <input type="radio" name="palce" value="ri" title="日本" >
+                    欧美
+                    <input type="radio" name="palce" value="ou" title="欧美" >
+                    韩国
+                    <input type="radio" name="palce" value="han" title="韩国" >
+                </div>
+                <div class="input_group">
+                    类型：现代流行<input type="checkbox" name="" title="安静" checked>
+                    悲伤
+                         <input type="checkbox" name="" title="伤感">
+                    欢快<input type="checkbox" name="" title="伤感">
+                    古风<input type="checkbox" name="" title="伤感">
+                </div>
+                <div class="text_group">
+                    简介：<input class="text" type="text" name="" value="" placeholder="歌手介绍">
+                </div>
+                <div  class="sumbit_btn">
+                    提交
+                </div>
+
+              </form>
+
+            </div>
+            <div class="what" id = "test" >
+              <ul id="simplecontent" class="show_list">
+
+              </ul>
+              <div class="select_btn">
+                  <ul id="page">
+
+                  </ul>
+              </div>
+            </div>
+            <div class="what" id = "singe_test" >
+              <ul id="simplecontent" class="show_list">
+
+              </ul>
+              <div class="select_btn">
+                  <ul id="page">
+
+                  </ul>
+              </div>
+            </div>
+
+
+
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+</html>
